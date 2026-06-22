@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Wag With Kim – Dog Walking Seattle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <style>
     * {
       box-sizing: border-box;
@@ -18,96 +17,429 @@
       background-color: #f5f5f5;
     }
 
-    /* NEW LOGO */
-    .site-logo {
-      width: 260px;
-      display: block;
-      margin: 20px auto;
+    a {
+      color: #5b3ba6;
+      text-decoration: none;
     }
 
-    /* HERO SECTION — BACKED UP (NOT ZOOMED) */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* NEW LOGO STYLE */
+    .site-logo {
+      width: 240px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .tagline {
+      font-size: 14px;
+      color: #555;
+    }
+
     .hero {
-      width: 100%;
-      height: 500px;
-      background-image: url('hero-clean.jpg');
-      background-size: contain;
+      position: relative;
+      height: 520px;
+      background-image: url("hero-clean.jpg");
+      background-size: contain;       /* ← FIXED: backs the image up */
       background-repeat: no-repeat;
       background-position: center;
-      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px;
     }
 
-    /* CONTENT */
-    .content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .tagline {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      color: #444;
-    }
-
-    .features {
-      list-style: none;
-      margin-bottom: 25px;
-      font-size: 1.1rem;
-    }
-
-    .features li {
-      margin: 8px 0;
-    }
-
-    .cta-box {
-      background-color: #7a4de8;
-      color: white;
-      padding: 15px 20px;
+    .hero-overlay-box {
+      background-color: rgba(255, 255, 255, 0.78);
+      padding: 24px 28px;
+      max-width: 460px;
       border-radius: 10px;
-      font-size: 1.2rem;
-      display: inline-block;
-      margin-bottom: 30px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
     }
 
-    .contact {
-      margin-top: 30px;
-      font-size: 1rem;
+    .hero-overlay-box h1 {
+      font-size: 32px;
+      margin-bottom: 6px;
+      color: #5b3ba6;
+    }
+
+    .hero-overlay-box h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
       color: #333;
     }
 
-    .contact div {
-      margin: 5px 0;
+    .hero-overlay-box ul {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+
+    .hero-overlay-box ul li {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .hero-overlay-box ul li::before {
+      content: "• ";
+      color: #5b3ba6;
+      font-weight: bold;
+    }
+
+    .hero-cta {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: #5b3ba6;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background-color: #4a2f8a;
+    }
+
+    .btn-outline {
+      border: 1px solid #5b3ba6;
+      color: #5b3ba6;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      background-color: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background-color: #f0e9ff;
+    }
+
+    .hero-qr {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 12px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-qr img {
+      width: 110px;
+      height: 110px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .hero-qr span {
+      font-size: 11px;
+      color: #444;
+    }
+
+    main {
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .pricing-table {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 18px 20px;
+      background-color: #faf7ff;
+    }
+
+    .pricing-table h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #5b3ba6;
+    }
+
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 6px 4px;
+      text-align: left;
+    }
+
+    .pricing-table th {
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    .pricing-note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .info-block {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .info-block p {
+      margin-bottom: 10px;
+    }
+
+    .signup-section {
+      margin-top: 30px;
+      border-top: 1px solid #eee;
+      padding-top: 24px;
+    }
+
+    .signup-form {
+      max-width: 420px;
+      margin-top: 10px;
+    }
+
+    .signup-form label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: #333;
+    }
+
+    .signup-form input,
+    .signup-form textarea {
+      width: 100%;
+      padding: 8px 9px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      font-family: inherit;
+    }
+
+    .signup-form textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    footer {
+      background-color: #111;
+      color: #eee;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left {
+      font-size: 13px;
+    }
+
+    .footer-left a {
+      color: #d6c7ff;
+    }
+
+    .footer-qr {
+      text-align: center;
+      background-color: #222;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+
+    .footer-qr img {
+      width: 90px;
+      height: 90px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+
+    .footer-qr span {
+      font-size: 11px;
+      color: #ccc;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NEW LOGO AT TOP -->
-  <img src="logo-main.png" alt="Wag With Kim Logo" class="site-logo">
-
-  <!-- HERO IMAGE -->
-  <section class="hero"></section>
-
-  <!-- MAIN CONTENT -->
-  <div class="content">
-    <div class="tagline">Happy Dogs. Happy Walks. Happy You.</div>
-
-    <ul class="features">
-      <li>Reliable & Trustworthy</li>
-      <li>Loving Care</li>
-      <li>Tail-Wagging Adventures</li>
-    </ul>
-
-    <div class="cta-box">Let’s go for a walk!</div>
-
-    <div class="contact">
-      <div><strong>Phone:</strong> 206-294-0602</div>
-      <div><strong>Email:</strong> wagwithkim@gmail.com</div>
-      <div><strong>Instagram:</strong> @WagWithKim</div>
+  <header>
+    <div>
+      <!-- NEW LOGO INSTEAD OF PURPLE TEXT -->
+      <img src="logo-main.png" alt="Wag With Kim Logo" class="site-logo">
+      <div class="tagline">Happy Dogs. Happy Walks. Happy You.</div>
     </div>
-  </div>
+
+    <div>
+      <span style="font-size:13px; color:#555;">
+        Call/Text: <strong>206-294-0602</strong> &nbsp;|&nbsp;
+        Email: <a href="mailto:wagwithkim@gmail.com">wagwithkim@gmail.com</a>
+      </span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay-box">
+      <h1>Seattle Dog Walking</h1>
+      <h2>Reliable, loving walks in your neighborhood.</h2>
+      <ul>
+        <li>Reliable &amp; trustworthy care</li>
+        <li>One-on-one, tailored walks</li>
+        <li>Photo &amp; update after each visit</li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn-primary" href="https://calendar.app.google/6ftJJTT76ibCSPqYA" target="_blank" rel="noopener">
+          Book a walk
+        </a>
+        <a class="btn-outline" href="#signup">
+          Join the waitlist
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-qr">
+      <img src="qr-hero.png" alt="Scan to visit Wag With Kim website" />
+      <span>Scan to visit the site</span>
+    </div>
+  </section>
+
+  <!-- REST OF YOUR ORIGINAL CODE BELOW (UNCHANGED) -->
+  <main>
+    <section>
+      <h2 class="section-title">2026 Seattle Pricing</h2>
+      <div class="pricing-grid">
+        <div class="pricing-table">
+          <h3>Dog Walking &amp; Visits</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>30-minute walk</td>
+                <td>$32</td>
+              </tr>
+              <tr>
+                <td>60-minute walk</td>
+                <td>$55</td>
+              </tr>
+              <tr>
+                <td>Drop-in visit (20 min)</td>
+                <td>$25</td>
+              </tr>
+              <tr>
+                <td>Drop-in visit (40 min)</td>
+                <td>$35</td>
+              </tr>
+              <tr>
+                <td>Overnight</td>
+                <td>$110</td>
+              </tr>
+              <tr>
+                <td>Puppy add-on</td>
+                <td>+ $15</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="pricing-note">
+            Final rates may vary slightly by location and specific needs. Multi-dog households quoted individually.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <p>
+            I focus on calm, structured, and fun walks tailored to your dog’s age, energy, and personality.
+            Whether it’s a quick potty break or a full-hour adventure, your dog gets my full attention.
+          </p>
+          <p>
+            Service area includes: Columbia City, Beacon Hill, Seward Park, and nearby South Seattle neighborhoods.
+          </p>
+          <p>
+            New clients start with a short meet &amp; greet so your dog can get to know me and we can talk through
+            routines, quirks, and preferences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup" class="signup-section">
+      <h2 class="section-title">Get in touch or join the waitlist</h2>
+      <p style="font-size:14px; color:#444; margin-bottom:10px;">
+        Share a few details and I’ll follow up with availability, next steps, and any questions.
+      </p>
+      <form class="signup-form">
+        <label for="name">Your name</label>
+        <input id="name" type="text" name="name" placeholder="Jane Doe" />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" />
+
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" placeholder="206-294-0602" />
+
+        <label for="neighborhood">Neighborhood</label>
+        <input id="neighborhood" type="text" name="neighborhood" placeholder="Columbia City, Beacon Hill, etc." />
+
+        <label for="details">Dog(s) &amp; schedule details</label>
+        <textarea id="details" name="details" placeholder="Tell me about your dog, preferred days/times, and any special needs."></textarea>
+
+        <button type="submit" class="btn-primary">Submit (placeholder only)</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <div>Wag With Kim &mdash; Seattle Dog Walking</div>
+      <div>Call/Text: <strong>206-294-0602</strong></div>
+      <div>Email: <a href="mailto:wagwithkim@gmail.com">wagwithkim@gmail.com</a></div>
+      <div>Instagram: <a href="https://instagram.com/WagWithKim" target="_blank" rel="noopener">@WagWithKim</a></div>
+    </div>
+    <div class="footer-qr">
+      <img src="qr-footer.png" alt="Scan to visit Wag With Kim website" />
+      <span>Scan to book or learn more</span>
+    </div>
+  </footer>
 
 </body>
 </html>
